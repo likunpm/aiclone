@@ -52,7 +52,7 @@ async def websocket_endpoint(websocket: WebSocket):
         try:
             # Receive and send back the client message
             question = await websocket.receive_text()
-            print("question:",time.ctime(),question)
+            # print("question:",time.ctime(),question)
             resp = ChatResponse(sender="you", message=question, type="stream")
             await websocket.send_json(resp.dict())
 
